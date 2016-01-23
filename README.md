@@ -14,7 +14,7 @@ GQ sequence:
 GQ(1) = GQ(2) = 1
 GQ(n) = GQ(n-GQ(n-GQ(...(GQ(n-1))) + GQ(n-GQ(n-GQ(...(GQ(n-2)))
 
-The Fibonacci sequence performs a lookup once while the Hofstader Q sequence performs it twice. The GQ sequence or Generalized Q sequence uses the two preceding terms to determine how many times to perform the lookup operation in the sequence. This could eb once, twice or any value in the sequence. The first 55 terms are below.
+The Fibonacci sequence performs a lookup once while the Hofstader Q sequence performs it twice. The GQ sequence or Generalized Q sequence uses the two preceding terms to determine how many times to perform the lookup operation in the sequence. This could be once, twice or any value in the sequence. The first 55 terms are below.
 
 1, 1, 2, 2, 4, 3, 6, 3, 5, 4, 9, 12, 10, 4, 15, 19, 16, 20, 18, 19, 21, 40, 22, 3, 7, 24, 6, 5, 29, 35, 27, 5, 40, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55...
 
