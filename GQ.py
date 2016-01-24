@@ -1,23 +1,18 @@
-def l(n):
-	a, b = 1, 1
-	seq = [a,b]
-	i = 2
+def gq(n, seq):
+	for seq_len in range(len(seq), n):
+		a = gq_helper(seq, seq_len, 1, seq[seq_len-1])
+		b = gq_helper(seq, seq_len, 2, seq[seq_len-2])
+		seq.append(a + b)
+	return seq
 
-	while i < n:
-		t1 = apply_func(seq, i, 1, seq[i-1])
-		t2 = apply_func(seq, i, 2, seq[i-2])
-		c = t1+t2
-
-		i = i+1
-		seq.append(c)
-
-		print c
-	print seq
-
-def apply_func(seq, i, r, times):
-	for j in range(0,times):
-		index = (i - r)
-		r = seq[index]
+def gq_helper(seq, seq_len, r, times):
+	for j in range(0, times):
+		index = (seq_len - r) % seq_len
+		r = seq[index % seq_len] if index >= 0 else seq[seq_len + index]
 	return r
 
-l(100)
+# Printing the last 200 elements of some interesting sequences.
+print(gq(1000, [1, 1])[800:])
+print(gq(1000, [2, 1])[800:])
+print(gq(1000, [0, 1, 1])[800:])
+print(gq(1000, [0, 0, 1])[800:])
